@@ -30,6 +30,11 @@ else:
 
 
 # Step-04: home.html
+<td>
+    <img style="border-radius: 50%;" id="blah"
+         src="{{ data.image.url }}" alt="Company Image"
+         height="80px" width="80px"/>
+</td>
 
 <form id="cityArea" action="{% url '' %}" method="POST" enctype="multipart/form-data">
 <div class="row">
@@ -46,6 +51,9 @@ else:
 </form>
 
 <script>
+    document.getElementById("imgInp").onclick = function () {
+        document.getElementById("blah").style.visibility = "visible";
+    };
     function readURL(input) {
         if (input.files && input.files[0]) { var reader = new FileReader();
             reader.onload = function (e) { $('#blah').attr('src', e.target.result); }
