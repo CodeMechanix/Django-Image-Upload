@@ -19,7 +19,7 @@ if settings.DEBUG:
 
 # Step-03: views.py
 
-if request.POST['company_image']::
+if bool(request.FILES.get('company_image', False)):
     upload_image = request.FILES['upload_image']
     fs = FileSystemStorage()
     image_name = fs.save(upload_image.name, company_image)
